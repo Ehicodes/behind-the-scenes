@@ -12,9 +12,17 @@ function calcAge(birthyear) {
       var millenial = true;
       const str = `Oh, and you're a millenial, ${firstName}`;
       console.log(str);
+
+      //lets prove that functions are also block-scoped starting in ES6 but only true for strict mode
+      function add(a, b) {
+        return a + b;
+      }
     }
+
     // console.log(str) we get a reference error because const and let are block-scoped so they  accesible or available only inside the block in which they were created
     console.log(millenial); //it works because var is function-scoped   . we are still in the same function, so the scope of the millenial variable is the entire function no matter if it was declared inside of a block or not
+
+    add(2, 3); // ReferenceError
   }
   printAge();
   return age;
