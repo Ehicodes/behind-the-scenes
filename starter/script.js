@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 function calcAge(birthyear) {
   const age = 2037 - birthyear;
@@ -10,8 +10,9 @@ function calcAge(birthyear) {
     //lets create a block(which generates a block scope)
     if (birthyear >= 1981 && birthyear <= 1996) {
       var millenial = true;
+      const firstName = 'Emma';
       const str = `Oh, and you're a millenial, ${firstName}`;
-      console.log(str);
+      console.log(str); //it will log Emma because JS tries to look for the variable in the current scope
 
       //lets prove that functions are also block-scoped starting in ES6 but only true for strict mode
       function add(a, b) {
@@ -23,7 +24,7 @@ function calcAge(birthyear) {
     console.log(millenial); //it works because var is function-scoped   . we are still in the same function, so the scope of the millenial variable is the entire function no matter if it was declared inside of a block or not
 
     // add(2, 3); // ReferenceError
-    console.log(add(2, 3));
+    // console.log(add(2, 3));
   }
   printAge();
   return age;
