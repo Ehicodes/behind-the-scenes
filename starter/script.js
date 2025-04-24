@@ -4,13 +4,18 @@ function calcAge(birthyear) {
   const age = 2037 - birthyear;
 
   function printAge() {
-    const output = `${firstName} You are ${age}, born in ${birthyear}`;
+    let output = `${firstName} You are ${age}, born in ${birthyear}`;
     console.log(output);
 
     //lets create a block(which generates a block scope)
     if (birthyear >= 1981 && birthyear <= 1996) {
       var millenial = true;
+      //creating new variable with same name as outer scope's variable
       const firstName = 'Emma';
+
+      //reassigning the value of a variable from  a parent scope inside of an inner scope
+      output = `NEW OUTPUT!`;
+
       const str = `Oh, and you're a millenial, ${firstName}`;
       console.log(str); //it will log Emma because JS tries to look for the variable in the current scope
 
@@ -25,6 +30,7 @@ function calcAge(birthyear) {
 
     // add(2, 3); // ReferenceError
     // console.log(add(2, 3));
+    console.log(output); // it works because we maniupulated an existing variable inside of an inner scope
   }
   printAge();
   return age;
