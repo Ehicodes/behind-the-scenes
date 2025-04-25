@@ -40,3 +40,14 @@ const firstName = 'Ehi';
 calcAge(1991);
 // console.log(age);
 // printAge()  in the global scope, we do not have access to variables defined in any other scope
+
+//HOISTING AND TDZ IN PRACTICE
+
+//Variables
+console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = 'Ehi';
+let job = 'Developer';
+const year = 2006;
