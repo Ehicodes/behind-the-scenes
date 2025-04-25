@@ -79,3 +79,15 @@ var numProducts = 10;
 function deleteShoppingCart() {
   console.log('all products deleted');
 }
+//avoid using var to declare variables
+
+//LITTLE DIFFERENCE BETWEEN  let, const and var
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(x === window.y);
+console.log(x === window.z);
+//variabes created with var will create a property on the global window object and that can have some implications in some cases.
+//variables created with let and const will not create a property on the global window object
