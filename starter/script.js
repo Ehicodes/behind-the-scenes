@@ -102,3 +102,10 @@ const calcAge = function (birthyear) {
 };
 
 calcAge(1991); //regular function call(a call of the function without it being attached to any object) in the strict mode will point to undefined
+
+const calcAgeArrow = birthyear => {
+  console.log(2037 - birthyear);
+  console.log(this);
+};
+
+calcAgeArrow(1980); //it will  point to the parent..windows object. it uses  the lexical this keyword of the parent which is console.log(this) at the top
