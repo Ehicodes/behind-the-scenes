@@ -62,8 +62,10 @@ function addDecl(a, b) {
   return a + b;
 }
 
-const addExpr = function (a, b) {
+var addExpr = function (a, b) {
   return a + b;
 };
 
-const addArrow = (a, b) => a + b;
+var addArrow = (a, b) => a + b;
+
+// we get  an error message that addArrow is not a function, that is because we basically  called undefined(2,3) because we use var
