@@ -94,4 +94,11 @@
 //variables created with let and const will not create a property on the global window object
 
 //THE THIS KEYWORD IN PRACTICE
-console.log(this); //this keyword in the global scope will be equal to the global object
+console.log(this); //this keyword in the global scope will be  the global object
+
+const calcAge = function (birthyear) {
+  console.log(2037 - birthyear);
+  console.log(this);
+};
+
+calcAge(1991); //regular function call(a call of the function without it being attached to any object) in the strict mode will point to undefined
