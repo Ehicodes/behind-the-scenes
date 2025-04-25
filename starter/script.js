@@ -54,9 +54,9 @@ const year = 2006;
 
 // Functions
 
-console.log(addDecl(2, 3));
-console.log(addExpr(2, 3));
-console.log(addArrow(2, 3));
+// console.log(addDecl(2, 3));
+// console.log(addExpr(2, 3));
+// console.log(addArrow(2, 3));
 
 function addDecl(a, b) {
   return a + b;
@@ -69,3 +69,13 @@ var addExpr = function (a, b) {
 var addArrow = (a, b) => a + b;
 
 // we get  an error message that addArrow is not a function, that is because we basically  called undefined(2,3) because we use var
+
+//Example
+console.log(numProducts);
+if (!numProducts) deleteShoppingCart();
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('all products deleted');
+}
