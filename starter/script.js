@@ -188,3 +188,10 @@ addExpr(2, 5, 6, 10, 4);
 var addArrow = (a, b) => a + b;
 
 //does not work for arrow functions
+
+//PRIMITIVES Vs OBJECTS (PRIMITIVES Vs REFERENCE TYPES)
+let age = 17;
+let oldAge = age;
+age = 18;
+console.log(age);
+console.log(oldAge); //STILL 17 BECAUSE AGE WAS STILL 17   AT THE POINT WHEN THE OLDAGE WAS SET SO CHANGING THE AGE FROM 17 TO 18 DID NOT AFFECT THE OLDAGE VARIABLE
