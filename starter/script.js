@@ -134,17 +134,44 @@
 // f(); // REGULAR FUNCTION CALL, SO WE  GET AN ERROR MESSAGE OF UNDEFINED
 
 //PITFALLS OF THE THIS KEYWORD RELATED TO REGULAR FUNCTIONS VS ARROW FUNCTIONS
-var firstName = 'Matilda';
+// var firstName = 'Matilda';
+// const ehi = {
+//   firstName: 'Ehinomen',
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+
+//   greet: () => console.log(`Hey ${this.firstName}`),
+// };
+
+// ehi.greet();
+//DO NOT USE VAR and DO NOT USE ARROW FUNCTIONS AS A METHOD
+
+//EXAMPLE 2. HAVING FUNCTIONS INSIDE OF A METHOD
 const ehi = {
   firstName: 'Ehinomen',
   year: 1991,
   calcAge: function () {
     console.log(this);
     console.log(2037 - this.year);
+
+    //Solution 1
+    // const self = this; //self or that
+    // const isMillenial = function () {
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    //Solution 2
+    const isMillenial = () => {
+      console.log(this);
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+    isMillenial();
   },
 
   greet: () => console.log(`Hey ${this.firstName}`),
 };
 
-ehi.greet();
-//DO NOT USE VAR and DO NOT USE ARROW FUNCTIONS AS A METHOD
+ehi.calcAge();
