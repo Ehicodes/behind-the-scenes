@@ -128,3 +128,7 @@ const bimbo = {
 
 bimbo.calcAge = ehi.calcAge;
 bimbo.calcAge();
+
+//COMPLETELY TAKING THE FUNCTION OUT OF THE EHI OBJECT
+const f = ehi.calcAge;
+f(); // REGULAR FUNCTION CALL, SO WE  GET AN ERROR MESSAGE OF UNDEFINED
