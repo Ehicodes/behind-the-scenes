@@ -209,3 +209,44 @@ friend.age = 19;
 console.log('Friend', friend);
 console.log('Me', me); //both objects have the same age which is strange instead of the friend's to be different.   the reason is the 'me' and 'friend'  point to the same object in the memory heap. they are just basically two unique identifiers pointing to the same value, which is the memory address in the call stack
 //  which then points to the reference in the memory heap
+
+//PRIMITIVES VS OBJECTS IN PRACTICE
+//primitve types
+// let lastName = 'Williams';
+// let oldLastName = lastName;
+// lastName = 'Davis';
+// console.log(lastName);
+// console.log(oldLastName);
+
+//objects/ reference types
+// const jessica = {
+//   firstName: 'Jessica',
+//   lastName: 'Williams',
+//   age: 27,
+// };
+
+// const marriedJessica = jessica;
+// marriedJessica.lastName = 'Davies';
+// console.log('Before Marriage:', jessica);
+// console.log('After marriage:', marriedJessica);
+
+//lets copy the object so we can be able to change one of them without changing the other. (copying objects)
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+//we can use a function called object.assign to copy the object. What it does is to  essentially merge two objects and  then return a new one
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = 'Davies';
+
+//object.assign provides  a shallow copy and  has some problems, e.g manipulating an object within an object
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('Push');
+
+console.log('Before Marriage:', jessica2);
+console.log('After marriage:', jessicaCopy);
