@@ -195,3 +195,17 @@ let oldAge = age;
 age = 18;
 console.log(age);
 console.log(oldAge); //STILL 17 BECAUSE AGE WAS STILL 17   AT THE POINT WHEN THE OLDAGE WAS SET SO CHANGING THE AGE FROM 17 TO 18 DID NOT AFFECT THE OLDAGE VARIABLE
+
+//scenario 2
+
+const me = {
+  name: 'Jonas',
+  age: 18,
+};
+
+const friend = me;
+
+friend.age = 19;
+console.log('Friend', friend);
+console.log('Me', me); //both objects have the same age which is strange instead of the friend's to be different.   the reason is the 'me' and 'friend'  point to the same object in the memory heap. they are just basically two unique identifiers pointing to the same value, which is the memory address in the call stack
+//  which then points to the reference in the memory heap
