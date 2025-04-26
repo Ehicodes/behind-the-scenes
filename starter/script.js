@@ -175,3 +175,16 @@ const ehi = {
 };
 
 ehi.calcAge();
+
+//ARGUMENTS KEYWORD
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+
+addExpr(2, 5, 6, 10, 4);
+
+var addArrow = (a, b) => a + b;
+
+//does not work for arrow functions
