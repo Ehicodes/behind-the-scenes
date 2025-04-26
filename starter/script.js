@@ -96,39 +96,55 @@
 //THE THIS KEYWORD IN PRACTICE
 // console.log(this); //this keyword in the global scope will be  the global object
 
-const calcAge = function (birthyear) {
-  console.log(2037 - birthyear);
-  // console.log(this);
-};
+// const calcAge = function (birthyear) {
+//   console.log(2037 - birthyear);
+//   // console.log(this);
+// };
 
-calcAge(1991); //regular function call(a call of the function without it being attached to any object) in the strict mode will point to undefined
+// calcAge(1991); //regular function call(a call of the function without it being attached to any object) in the strict mode will point to undefined
 
-const calcAgeArrow = birthyear => {
-  console.log(2037 - birthyear);
-  // console.log(this);
-};
+// const calcAgeArrow = birthyear => {
+//   console.log(2037 - birthyear);
+//   // console.log(this);
+// };
 
-calcAgeArrow(1980); //it will  point to the parent..windows object. it uses  the lexical this keyword of the parent which is console.log(this) at the top
+// calcAgeArrow(1980); //it will  point to the parent..windows object. it uses  the lexical this keyword of the parent which is console.log(this) at the top
 
+// const ehi = {
+//   year: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2037 - this.year);
+//   },
+// };
+
+// ehi.calcAge(); //the this keyword in a method will be the object calling the method
+
+//FINAL EXAMPLE
+//PROOD THAT THE THIS KEYWORD ONLY POINTS TO THE OBJECT CALLING THE METHOD
+// const bimbo = {
+//   year: 2017,
+// };
+
+// bimbo.calcAge = ehi.calcAge;
+// bimbo.calcAge();
+
+//COMPLETELY TAKING THE FUNCTION OUT OF THE EHI OBJECT
+// const f = ehi.calcAge;
+// f(); // REGULAR FUNCTION CALL, SO WE  GET AN ERROR MESSAGE OF UNDEFINED
+
+//PITFALLS OF THE THIS KEYWORD RELATED TO REGULAR FUNCTIONS VS ARROW FUNCTIONS
+var firstName = 'Matilda';
 const ehi = {
+  firstName: 'Ehinomen',
   year: 1991,
   calcAge: function () {
     console.log(this);
     console.log(2037 - this.year);
   },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
 };
 
-ehi.calcAge(); //the this keyword in a method will be the object calling the method
-
-//FINAL EXAMPLE
-//PROOD THAT THE THIS KEYWORD ONLY POINTS TO THE OBJECT CALLING THE METHOD
-const bimbo = {
-  year: 2017,
-};
-
-bimbo.calcAge = ehi.calcAge;
-bimbo.calcAge();
-
-//COMPLETELY TAKING THE FUNCTION OUT OF THE EHI OBJECT
-const f = ehi.calcAge;
-f(); // REGULAR FUNCTION CALL, SO WE  GET AN ERROR MESSAGE OF UNDEFINED
+ehi.greet();
+//DO NOT USE VAR and DO NOT USE ARROW FUNCTIONS AS A METHOD
