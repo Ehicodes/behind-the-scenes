@@ -109,3 +109,12 @@ const calcAgeArrow = birthyear => {
 };
 
 calcAgeArrow(1980); //it will  point to the parent..windows object. it uses  the lexical this keyword of the parent which is console.log(this) at the top
+
+const ehi = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+  },
+};
+
+ehi.calcAge();
